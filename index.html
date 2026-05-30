@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header>
+      <h1 class="page-title">Task Manager</h1>
+      <p class="page-description">
+        Add, complete, and remove tasks with a responsive task manager built for modern browsers.
+        The layout is semantic, accessible, and styled for clarity on every device.
+      </p>
+    </header>
+
+    <section class="task-panel" aria-labelledby="task-panel-heading">
+      <div class="task-header">
+        <div class="task-top">
+          <div>
+            <h2 id="task-panel-heading">Your tasks</h2>
+            <p class="task-feedback" id="task-count">0 tasks</p>
+          </div>
+
+          <div class="task-controls">
+            <div class="task-filters" role="group" aria-label="Task filters">
+              <button type="button" class="filter-button filter-button--active" data-filter="all">All</button>
+              <button type="button" class="filter-button" data-filter="pending">Pending</button>
+              <button type="button" class="filter-button" data-filter="completed">Completed</button>
+            </div>
+            <button type="button" id="theme-toggle" class="theme-button" aria-pressed="false">Dark mode</button>
+          </div>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label for="task-input" class="sr-only">Add new task</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            placeholder="Enter a new task"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <div role="status" aria-live="polite" id="alert-message" class="task-feedback"></div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
